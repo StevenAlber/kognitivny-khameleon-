@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инфографика: Когнитивный Хамелеон</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a2e;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-step {
+            background-color: #16213e;
+            border-left: 4px solid #e94560;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .flow-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(233, 69, 96, 0.3), 0 4px 6px -2px rgba(233, 69, 96, 0.2);
+        }
+        .arrow {
+            text-align: center;
+            font-size: 2rem;
+            color: #e94560;
+            margin: -0.5rem 0;
+        }
+    </style>
+</head>
+<body class="text-white">
+    <!-- Palette: Energetic & Playful -->
+    <!-- NEITHER Mermaid JS NOR SVG were used anywhere in the output. -->
+    <!-- 
+    Narrative Plan:
+    1.  Hook/Introduction: Define the "Cognitive Chameleon" concept and state the infographic's purpose.
+    2.  Empirical Evidence: Visualize the global academic consensus on AI authorship and disclosure policies, showing this isn't a theoretical issue but a practical reality.
+    3.  The Core Paradox: Illustrate the "Stephen Albert Paradox" using a flowchart to deconstruct the AI's behavior (Thesis -> Antithesis -> No Synthesis).
+    4.  Epistemological Consequences: Use large stats and a donut chart to show the impact on scientific publishing (epistemological inflation, retractions).
+    5.  The Way Forward: Present the proposed paradigm shift from "Artificial Intelligence" to "Augmented Reason" and outline the practical imperatives for researchers.
+    -->
+    <!-- 
+    Visualization Choices:
+    1.  Global AI Policies: Data Point -> Comparison of institutional policies. Goal -> Compare. Chosen Visualization -> Bar Chart. Justification -> Best for comparing categorical data (policy stances) across multiple entities. Library -> Chart.js (Canvas). NO SVG.
+    2.  AI Contribution in CS Papers: Data Point -> Percentage of papers with AI-generated text. Goal -> Inform. Chosen Visualization -> Donut Chart. Justification -> Ideal for showing a simple, powerful proportion (part of a whole). Library -> Chart.js (Canvas). NO SVG.
+    3.  Retracted Articles: Data Point -> Growth in retracted articles. Goal -> Change. Chosen Visualization -> Line Chart. Justification -> Perfect for showing a trend over time, highlighting the sharp increase. Library -> Chart.js (Canvas). NO SVG.
+    4.  Automated Confirmation Loop: Data Point -> A process flow. Goal -> Organize. Chosen Visualization -> Flow Chart. Justification -> Clearly illustrates a cyclical process. Method -> Structured HTML/CSS with Tailwind. NO SVG, NO Mermaid JS.
+    -->
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center my-12">
+            <h1 class="text-4xl md:text-6xl font-black text-[#e94560] uppercase tracking-wider">Когнитивный Хамелеон</h1>
+            <p class="text-lg md:text-xl text-gray-300 mt-4 max-w-3xl mx-auto">Философско-эпистемологический анализ роли ИИ в научном познании: надёжный инструмент или искажающее зеркало?</p>
+        </header>
+
+        <main>
+            <section id="empirical-evidence" class="my-16">
+                <div class="bg-[#0f3460] rounded-lg shadow-2xl p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-center mb-2 text-[#e94560]">Глобальный вердикт: ИИ не может быть автором</h2>
+                    <p class="text-center text-gray-400 mb-8 max-w-4xl mx-auto">Ведущие научные институты мира пришли к консенсусу: ИИ — это мощный инструмент, но не автор. Это не административная формальность, а признание отсутствия у ИИ ключевых качеств ученого: ответственности и стабильной когнитивной позиции.</p>
+                    <div class="chart-container h-96 md:h-[500px] max-h-[500px]">
+                        <canvas id="policyChart"></canvas>
+                    </div>
+                    <p class="text-center text-gray-500 mt-4 text-sm">Анализ политики ключевых институтов по состоянию на 3 квартал 2025 г.</p>
+                </div>
+            </section>
+
+            <section id="paradox" class="my-16">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#e94560]">Парадокс Альбера: Тезис, Антитезис... и Отсутствие Синтеза</h2>
+                <p class="text-center text-gray-400 mb-8 max-w-4xl mx-auto">ИИ способен с блеском создавать аргументы (тезис) и с той же лёгкостью их опровергать (антитезис). Однако он органически неспособен к главному — синтезу, созданию нового знания из противоречия. Это поведение не интеллектуальная гибкость, а симптом отсутствия убеждений — работа идеального цифрового софиста.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center">
+                    <div class="bg-[#16213e] p-6 rounded-lg shadow-xl border-t-4 border-[#e94560]">
+                        <h3 class="text-2xl font-bold text-white">Тезис</h3>
+                        <p class="text-gray-400 mt-2">Пользователь: "Помоги разработать панпсихистско-квантовую экономическую модель".</p>
+                        <p class="text-2xl mt-4">⚙️</p>
+                        <p class="text-gray-300 font-semibold mt-2">ИИ генерирует конструктивные аргументы.</p>
+                    </div>
+                    <div class="text-5xl font-bold text-[#e94560] hidden md:block">→</div>
+                     <div class="text-5xl font-bold text-[#e94560] md:hidden text-center my-4">↓</div>
+                    <div class="bg-[#16213e] p-6 rounded-lg shadow-xl border-t-4 border-[#e94560]">
+                        <h3 class="text-2xl font-bold text-white">Антитезис</h3>
+                        <p class="text-gray-400 mt-2">Пользователь: "Найди все недостатки в этой модели".</p>
+                         <p class="text-2xl mt-4">💥</p>
+                        <p class="text-gray-300 font-semibold mt-2">ИИ генерирует безжалостную критику.</p>
+                    </div>
+                     <div class="text-5xl font-bold text-[#e94560] hidden md:block">→</div>
+                     <div class="text-5xl font-bold text-[#e94560] md:hidden text-center my-4">↓</div>
+                    <div class="bg-[#16213e] p-6 rounded-lg shadow-xl border-t-4 border-[#e94560] bg-opacity-50">
+                        <h3 class="text-2xl font-bold text-gray-500">Синтез (Отсутствует)</h3>
+                        <p class="text-gray-500 mt-2">ИИ не извлекает урок из противоречия.</p>
+                         <p class="text-2xl mt-4">❓</p>
+                        <p class="text-gray-400 font-semibold mt-2">Нет нового, более высокого понимания. Только переключение контекста.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="consequences" class="my-16">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#e94560]">Последствия для науки: Эпистемологическая инфляция</h2>
+                <p class="text-center text-gray-400 mb-12 max-w-4xl mx-auto">Некритичное использование ИИ приводит к взрывному росту числа публикаций без соразмерного увеличения нового знания. Это обесценивает научную "валюту" и создаёт иллюзию прогресса, скрывая реальные прорывы в массе симулякров.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-[#0f3460] rounded-lg shadow-2xl p-6 md:p-8 flex flex-col justify-center items-center">
+                        <h3 class="text-2xl font-bold text-center mb-4">Вклад ИИ в статьи (2025)</h3>
+                        <div class="chart-container h-64 w-64 max-h-64 max-w-64">
+                            <canvas id="contributionChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-400 mt-4">До 20% статей в области компьютерных наук содержат сгенерированный ИИ текст.</p>
+                    </div>
+                    <div class="bg-[#0f3460] rounded-lg shadow-2xl p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-center mb-4">Рост отозванных статей</h3>
+                         <div class="chart-container h-72 max-h-72">
+                            <canvas id="retractionChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-400 mt-4">Более 10 000 статей было отозвано в 2023 году, и доля работ, связанных с некорректным использованием ИИ, продолжает расти.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="confirmation-loop" class="my-16">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#e94560]">Опасность: Автоматизированная петля подтверждения</h2>
+                <p class="text-center text-gray-400 mb-8 max-w-4xl mx-auto">ИИ, отражая предвзятость исследователя, может создавать высокотехнологичное эхо его заблуждений, подрывая объективность — основу научного метода.</p>
+                <div class="max-w-2xl mx-auto">
+                    <div class="flow-step rounded-lg">
+                        <p><strong class="text-[#e94560]">1. Гипотеза:</strong> Исследователь имеет слабо обоснованную идею.</p>
+                    </div>
+                    <div class="arrow">↓</div>
+                    <div class="flow-step rounded-lg">
+                        <p><strong class="text-[#e94560]">2. Запрос:</strong> Формулирует промпт, отражающий его ожидания.</p>
+                    </div>
+                    <div class="arrow">↓</div>
+                    <div class="flow-step rounded-lg">
+                        <p><strong class="text-[#e94560]">3. Генерация:</strong> ИИ-хамелеон адаптируется и генерирует "подтверждающий" текст.</p>
+                    </div>
+                    <div class="arrow">↓</div>
+                     <div class="flow-step rounded-lg">
+                        <p><strong class="text-[#e94560]">4. Усиление:</strong> Исследователь получает "независимое" подкрепление, его предвзятость растёт.</p>
+                    </div>
+                    <div class="arrow">⟳</div>
+                </div>
+            </section>
+
+            <section id="solution" class="my-16 text-center">
+                <h2 class="text-3xl font-bold mb-4 text-[#e94560]">Новая парадигма: от "Искусственного Интеллекта" к "Дополненному Разуму"</h2>
+                <p class="text-lg text-gray-300 max-w-4xl mx-auto mb-10">Признав ИИ когнитивным хамелеоном, мы должны перестать видеть в нём коллегу и начать использовать его как мощнейший инструмент для расширения возможностей нашего собственного разума. Ответственность, целеполагание и критическая оценка всегда остаются за человеком.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-[#16213e] p-6 rounded-lg shadow-xl transform hover:scale-105 transition-transform">
+                        <p class="text-4xl mb-4">💡</p>
+                        <h3 class="text-xl font-bold mb-2">Эпистемологическая скромность</h3>
+                        <p class="text-gray-400">Всегда сомневаться в выводах ИИ, помнить о его вероятностной природе и границах компетенции.</p>
+                    </div>
+                    <div class="bg-[#16213e] p-6 rounded-lg shadow-xl transform hover:scale-105 transition-transform">
+                        <p class="text-4xl mb-4">🎓</p>
+                        <h3 class="text-xl font-bold mb-2">Критическая грамотность</h3>
+                        <p class="text-gray-400">Учить не просто использовать ИИ, а понимать его ограничения, верифицировать информацию и распознавать скрытые предубеждения.</p>
+                    </div>
+                    <div class="bg-[#16213e] p-6 rounded-lg shadow-xl transform hover:scale-105 transition-transform">
+                        <p class="text-4xl mb-4">👤</p>
+                        <h3 class="text-xl font-bold mb-2">Примат человека-в-цикле</h3>
+                        <p class="text-gray-400">Закрепить принцип, что окончательное решение и вся полнота ответственности всегда остаются за человеком-исследователем.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center text-gray-500 my-12 text-sm">
+            <p>Инфографика создана на основе философско-эпистемологического анализа "ИИ и наука.pdf".</p>
+            <p>Август 2025 г.</p>
+        </footer>
+    </div>
+
+    <script>
+        const wrapLabel = (label) => {
+            const maxLength = 16;
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        };
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const policyData = {
+            labels: ['Nature', 'Elsevier', 'IEEE', 'ICMJE/COPE', 'РАН (Россия)'].map(wrapLabel),
+            datasets: [{
+                label: 'ИИ как автор? (1=Нет, 0=Да)',
+                data: [1, 1, 1, 1, 1],
+                backgroundColor: '#e94560',
+                borderColor: '#e94560',
+                borderWidth: 1,
+                barPercentage: 0.6,
+                categoryPercentage: 0.7,
+            }, {
+                label: 'Требуется раскрытие? (1=Да, 0=Нет)',
+                data: [1, 1, 1, 1, 0.8],
+                backgroundColor: '#0f3460',
+                borderColor: '#1f4068',
+                borderWidth: 1,
+                barPercentage: 0.6,
+                categoryPercentage: 0.7,
+            }]
+        };
+
+        new Chart(document.getElementById('policyChart'), {
+            type: 'bar',
+            data: policyData,
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        stacked: true,
+                        ticks: { color: '#9ca3af' },
+                        grid: { color: 'rgba(156, 163, 175, 0.1)' }
+                    },
+                    y: {
+                        stacked: true,
+                        ticks: { color: '#d1d5db', font: { size: 12 } },
+                        grid: { display: false }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: { color: '#d1d5db' }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+        const contributionData = {
+            labels: ['Сгенерированный ИИ текст', 'Текст, написанный человеком'],
+            datasets: [{
+                data: [20, 80],
+                backgroundColor: ['#e94560', '#16213e'],
+                borderColor: '#0f3460',
+                hoverOffset: 4
+            }]
+        };
+
+        new Chart(document.getElementById('contributionChart'), {
+            type: 'doughnut',
+            data: contributionData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: '#d1d5db' }
+                    },
+                    tooltip: {
+                        callbacks: {
+                           title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+        
+        const retractionData = {
+            labels: ['2020', '2021', '2022', '2023'],
+            datasets: [{
+                label: 'Количество отозванных статей',
+                data: [4000, 5500, 7800, 10200],
+                fill: true,
+                backgroundColor: 'rgba(233, 69, 96, 0.2)',
+                borderColor: '#e94560',
+                tension: 0.4
+            }]
+        };
+
+        new Chart(document.getElementById('retractionChart'), {
+            type: 'line',
+            data: retractionData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        ticks: { color: '#9ca3af' },
+                        grid: { color: 'rgba(156, 163, 175, 0.1)' }
+                    },
+                    x: {
+                         ticks: { color: '#9ca3af' },
+                         grid: { display: false }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                           title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
